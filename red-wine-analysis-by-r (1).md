@@ -34,7 +34,7 @@ library(corrplot)
 
 ## Target of this Project
 
-In this project, I will analyze the Red Wine Data and try to understand which variables are responsible for the quality of the wine. First I will try to get a feel of the variables on their own and then I will try to find out the correlation between them and the Wine Quality with other factors thrown in. Finally I will create a linear model to predict the outcome of a test set data.
+In order to determine which factors affect wine quality, I will analyse the Red Wine Data for this project. I'll attempt to acquire a sense of the variables separately before attempting to determine how they relate to the wine quality when other variables are taken into account. In the end, I'll develop a linear model to forecast the results of test set data.
 
 ```{r }
 #Loading the csv file
@@ -67,7 +67,7 @@ summary(wine)
 
 ## Univariate Plots
 
-First, before doing any analysis between the variables, I am going to plot the distribution of each of the variable as I would like to get a feel of the variables first. Based on the distribution shape, i.e. Normal, Positive Skew or Negative Skew, this will also help me to get some sense what to expect when I plot different variables against each other. Also for many variables, there are extreme outliers present in this dataset. For those, I will remove the extreme outliers for a more robust analysis.
+I'm going to plot the distribution of each variable first in order to get a feel for it before undertaking any analysis between the variables. Plotting different variables against each other will also help me get a feel of what to expect based on the distribution shape, such as Normal, Positive Skew, or Negative Skew. This dataset has severe outliers for a number of variables as well. To provide a more thorough study, I shall exclude the extreme outliers for those.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(data = wine, aes(x = quality)) +
@@ -80,7 +80,7 @@ ggplot(data = wine, aes(x = rating)) +
   geom_bar(width = 1, color = 'black',fill = I('blue'))
 ```
 
-One thing I am seeing from the above two plots is most of the wines in the dataset are average quality wines. So I am wondering whether this data collected is accurate or complete or not. Was this data collected from a specific geographical location? Or was it spread around a big area? As the good quality and the poor quality wines are almost like outliers here, it might be difficult to get an accurate model of the Wine Quality. Let's look at the other plots.
+ Let's look at the other plots.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 grid.arrange(ggplot(wine, aes( x = 1, y = fixed.acidity ) ) + 
